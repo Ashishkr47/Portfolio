@@ -1,0 +1,169 @@
+#projects {
+  background-color: $white-color;
+  color: $dark-blue-text;
+  margin-top: -10rem;
+  padding-top: 15rem;
+
+  @include respond(tab-land) {
+    margin-top: 0;
+    padding-top: 5rem;
+  }
+
+  .project-wrapper {
+    margin-bottom: 15rem;
+
+    @include respond(phone) {
+      margin-bottom: 0rem;
+    }
+
+    .row {
+      margin-bottom: 8rem;
+
+      @include respond(phone) {
+        margin-bottom: 4rem;
+      }
+    }
+
+    &__text {
+      text-align: left;
+
+      @include respond(phone) {
+        margin-bottom: 2.5rem !important;
+      }
+      @include respond(tab-land) {
+        margin-bottom: 4.8rem;
+      }
+
+      &-title {
+        font-weight: bold;
+        margin-bottom: 1.8rem;
+        font-size: $mid-font-size;
+
+        @include respond(phone) {
+          font-size: 2rem;
+        }
+      }
+
+      & p > a {
+        color: $secondary-color;
+      }
+    }
+
+    &__image {
+      width: 90%;
+      margin: 0 auto;
+
+      @include respond(tab-land) {
+        width: 100%;
+        margin: 0;
+      }
+
+      & .thumbnail {
+        border: none;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        transition: all 0.2s ease-out;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+        transition: 0.5s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+          0.5s box-shadow,
+          0.5s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+
+        @include respond(phone) {
+          border: 1px solid $light-grey;
+          box-shadow: none;
+          margin-bottom: 3.2rem;
+        }
+      }
+    }
+  }
+  
+  /* Additional Styling */
+  .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: $dark-blue-text;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    font-size: 1.6rem;
+    padding: 1.2rem 2rem;
+    margin-top: 2rem;
+    border: 2px solid $dark-blue-text;
+    border-radius: 5px;
+    color: $dark-blue-text;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $dark-blue-text;
+      color: $white-color;
+    }
+  }
+
+  .cta-btn--hero {
+    font-size: 2rem;
+    padding: 1.5rem 3rem;
+    background-color: $dark-blue-text;
+    color: $white-color;
+    border: none;
+
+    &:hover {
+      background-color: lightblue;
+    }
+  }
+
+  .text-rotating {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .text-rotating span {
+    display: none;
+  }
+
+  .text-rotating span:first-child {
+    display: inline;
+    animation: show-text 4s infinite;
+  }
+
+  .text-rotating span:nth-child(2) {
+    animation-delay: 6s;
+  }
+
+  .text-rotating span:nth-child(3) {
+    animation-delay: 8s;
+  }
+
+  .text-rotating span:nth-child(4) {
+    animation-delay: 10s;
+  }
+
+  @keyframes show-text {
+    0%, 80%, 100% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    20%, 60% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .thumbnail {
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      width: 100%;
+      height: 500px;
+      transition: transform 0.5s ease;
+    }
+  }
+}

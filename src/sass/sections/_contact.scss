@@ -1,0 +1,59 @@
+#contact {
+  background-color: $primary-color;
+  background-image: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+  color: $white-color;
+  padding: 10rem 0; /* Increase padding for better spacing */
+
+  @include respond(tab-land) {
+    height: 100%;
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+
+  .contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond(phone) {
+      padding-bottom: 5rem;
+    }
+
+    &__text {
+      max-width: 800px; /* Limit text width for better readability */
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 4rem;
+
+      @include respond(phone) {
+        font-size: 1.4rem;
+      }
+    }
+
+    .contact-options {
+      display: flex;
+      justify-content: center;
+
+      /* Style for both email and call options */
+      .cta-btn {
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+        margin: 0 1rem;
+        background-color: $secondary-color;
+        border-radius: 4px;
+        color: $white-color;
+        text-decoration: none;
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover {
+          background-color: darken($secondary-color, 10%);
+        }
+
+        @include respond(phone) {
+          font-size: 1.4rem;
+          padding: 0.8rem 1.6rem;
+        }
+      }
+    }
+  }
+}
